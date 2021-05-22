@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Radiation Forecasting</title>
+    <style>
+        body{
+            width : 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            font-family: sans-serif;
+            font-size: 16px;
+            background-color: #185adb;
+            color: #ffc947;
+        }
+       
+        h1{
+            width:80%;
+            text-align: center;
+            font-family:Helvetica, sans-serif;
+            font-size: 3rem;
+        }
+        p{
+            width: 75%;
+            line-height: 1.5;
+            font-weight:bold;
+            word-spacing: 2px;
+            font-size: 1.1rem;
+        }
+        *,*::before,*::after{
+            box-sizing: border-box;
+        }
+        input{
+            border: none;
+            -webkit-appearance: none;
+            -ms-appearance: none;
+            -moz-appearance: none;  
+            appearance: none;
+            background: #f2f2f2;
+            padding: 12px;
+            border-radius: 3px;
+            width: 12rem;
+            margin: 10px;
+            outline: none;
+
+            
+        }
+
+        input:focus::placeholder{
+            color: transparent;
+        }
+        input::placeholder{
+            color: #222;
+            font-family: cursive, sans-serif;
+            transition: color 0.3s ease;
+        }
+        .submit{
+            background-color: palegreen;
+            color:indigo;
+            cursor: pointer;
+            font-family:cursive, sans-serif;
+        }
+        .submit:hover{
+            background-color: #f7fd04;
+            
+        }
+        .credits{
+            height: 20%;
+            background-color:#fb3640 ;
+            margin:30px;
+            color:whitesmoke;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            word-spacing: 2px;
+            font-weight: 600;
+            font-size: 1.5rem;
+            text-align: center;
+            padding: 0.5rem;
+        }
+        a{
+            text-decoration: none;
+            color: whitesmoke;
+        }
+        .prediction{
+            color: #f7fd04;
+            font-weight: 600;
+            font-size: 1.7rem;
+        }
+        
+    </style>
+    
+</head>
+
+    <body>
+        <h1>Solar Radiation (GHI) Forecasting App 🌞</h1>
+        <p>Irradiance is the power per unit area received from the Sun in the form of electromagnetic radiation. <br> <br>
+            Here I have Deployed a Machine Learning Model that predicts Global Horizontal Irradiance (GHI) i.e. the total irradiance from the sun on a horizontal surface on Earth.  It is the sum of direct irradiance (after accounting for the solar zenith angle of the sun z) and diffuse horizontal irradiance. But we will forecast it for after 2 days according to current weather Data.</p>
+        <br>
+        <form method="POST" class = "">
+            <label></label>
+            <input name="Month"  placeholder="Month" required>
+            <label></label>
+            <input name="Day" placeholder="Day" required>
+            <br>
+            <label></label>
+            <input name="Hour" placeholder="Hour" required>
+            <label></label>
+            <input name="Minute" placeholder="Minute" required>
+            <br>
+            <label></label>
+            <input name="CT" placeholder="Cloud Type" required>
+            <label></label>
+            <input name="DP" placeholder="Dew Point" required>
+            <br>
+            <label></label>
+            <input name="SZA" placeholder="Solar Zenith Angle" required>
+            <label></label>
+            <input name="FF" placeholder="Fill Flag" required>
+            <br>
+            <label></label>
+            <input name="SA" placeholder="Surface Albedo" required>
+            <label></label>
+            <input name="WS" placeholder="Wind Speed"  required>
+            <br>
+            <label></label>
+            <input name="PW" placeholder="Precipitable Water" required>
+            <label></label>
+            <input name="WD" placeholder="Wind Direction" required>
+            <br>
+            <label></label>
+            <input name="RH" placeholder="Relative Humidity" required>
+            <label></label>
+            <input name="Temperature" placeholder="Temperature" required>
+            <br>
+            <label></label>
+            <input name="Pressure" placeholder="Pressure" required>
+            <input class = 'submit' type="submit"  value="Forecast" >
+            
+            
+            <h2 class = 'prediction'>The Forecast after 48 hours is: {{ans}}</h2>
+    
+        </form>
+    </body>
+    <footer>
+        <div class = 'credits'>
+            Made by 👨‍💻 <a href = 'https://www.linkedin.com/in/nishant-dhingra-82515918a' >NISHANT</a> with lots of 💕 
+        </div>
+         
+    </footer>
+</html>
+
