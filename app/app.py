@@ -32,7 +32,7 @@ def hello_world():
 
         np_input = np.array([float(month), float(day), float(hour), float(minute), float(cloud_type), float(dew_point), float(solar_zenith_angle), float(fill_flag), float(surface_albedo), float(wind_speed), float(precipitable_water), float(wind_direction), float(relative_humidity), float(temperature), float(pressure)])
 
-        model = load('model.joblib')
+        model = load('app/model.joblib')
 
         pred = model.predict(np_input)
 
